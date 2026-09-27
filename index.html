@@ -14,6 +14,7 @@
     --soil: #5c4b3a;
     --moss: #4a5d4e;
     --accent: #b85c38;
+    --red: #c0392b;
     --font-serif: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
     --font-sans: "Inter", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
     --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
@@ -115,6 +116,7 @@
     letter-spacing: 0.02em;
     text-decoration: none;
     color: inherit;
+    cursor: pointer;
   }
   .nav-links { display: flex; gap: 32px; list-style: none; }
   .nav-links a {
@@ -125,6 +127,7 @@
     text-transform: uppercase;
     position: relative;
     padding-bottom: 4px;
+    cursor: pointer;
   }
   .nav-links a::after {
     content: "";
@@ -281,6 +284,7 @@
   .section {
     padding: clamp(80px, 16vh, 200px) clamp(24px, 5vw, 72px);
     position: relative;
+    scroll-margin-top: 40px;
   }
   .section-head {
     display: flex;
@@ -400,9 +404,7 @@
     color: var(--soil);
     opacity: 0.55;
   }
-  .student.transferred {
-    background: var(--paper-deep);
-  }
+  .student.transferred { background: var(--paper-deep); }
   .student-tag {
     margin-left: auto;
     font-size: 0.58rem;
@@ -423,9 +425,7 @@
     color: var(--soil);
     text-align: right;
   }
-  .students-note span {
-    color: var(--accent);
-  }
+  .students-note span { color: var(--accent); }
 
   /* ---------- 照片行 ---------- */
   .photo-row {
@@ -433,6 +433,7 @@
     grid-template-columns: 1fr 1fr;
     gap: clamp(16px, 3vw, 40px);
     margin-top: clamp(60px, 12vh, 120px);
+    scroll-margin-top: 80px;
   }
   .photo-row figure {
     position: relative;
@@ -464,6 +465,24 @@
     z-index: 2;
   }
 
+  /* ---------- 影像结尾文案 ---------- */
+  .moments-closing {
+    margin-top: clamp(40px, 8vh, 72px);
+    text-align: right;
+    font-family: var(--font-serif);
+    font-size: clamp(1rem, 1.9vw, 1.35rem);
+    font-style: italic;
+    letter-spacing: 0.04em;
+    color: var(--soil);
+    line-height: 1.6;
+  }
+  .moments-closing::before {
+    content: "—";
+    margin-right: 10px;
+    color: var(--accent);
+    font-style: normal;
+  }
+
   /* ---------- 数据条 ---------- */
   .stats-row {
     display: grid;
@@ -479,6 +498,7 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    min-height: clamp(160px, 22vh, 220px);
   }
   .stat-number {
     font-family: var(--font-serif);
@@ -500,6 +520,55 @@
     text-transform: uppercase;
   }
 
+  /* ---------- 暗号格子 ---------- */
+  .stat-secret { justify-content: space-between; }
+  .secret-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    position: relative;
+    margin: auto 0;
+    padding: 4px 0;
+    align-self: flex-start;
+  }
+  .secret-old-wrap {
+    position: relative;
+    display: inline-block;
+    align-self: flex-start;
+  }
+  .secret-text {
+    font-family: var(--font-serif);
+    font-size: clamp(0.88rem, 1.5vw, 1.22rem);
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+  .secret-old {
+    transform-origin: left center;
+    display: block;
+  }
+  .secret-new {
+    color: var(--moss);
+    opacity: 0;
+    will-change: transform, opacity;
+  }
+  .secret-line {
+    position: absolute;
+    left: -4px;
+    right: -4px;
+    top: 52%;
+    height: 2px;
+    background: var(--red);
+    border-radius: 1px;
+    pointer-events: none;
+    transform-origin: left center;
+    transform: scaleX(0) rotate(-1.6deg);
+    will-change: transform;
+    box-shadow: 0 0 0.5px rgba(192,57,43,0.4);
+  }
+
   /* ---------- 引语 ---------- */
   .quote-section {
     padding: clamp(100px, 22vh, 280px) clamp(24px, 8vw, 160px);
@@ -507,6 +576,7 @@
     color: var(--paper);
     position: relative;
     overflow: hidden;
+    scroll-margin-top: 0;
   }
   .quote-section::before {
     content: "\201C";
@@ -577,6 +647,34 @@
     text-decoration: none;
   }
   .footer-col a:hover { color: var(--accent); }
+
+  /* ---------- 页面结尾文案 ---------- */
+  .end-line {
+    padding: clamp(64px, 12vh, 140px) 0 clamp(48px, 8vh, 80px);
+    text-align: center;
+    position: relative;
+  }
+  .end-line::before {
+    content: "";
+    position: absolute;
+    top: clamp(32px, 6vh, 64px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 1px;
+    background: rgba(92,75,58,0.4);
+  }
+  .end-text {
+    font-family: var(--font-serif);
+    font-size: clamp(1.5rem, 3.6vw, 2.6rem);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.4;
+    color: var(--ink);
+    max-width: 24ch;
+    margin: 0 auto;
+  }
+
   .footer-bottom {
     display: flex;
     justify-content: space-between;
@@ -587,6 +685,7 @@
     letter-spacing: 0.05em;
     flex-wrap: wrap;
     gap: 12px;
+    border-top: 1px solid rgba(26,26,26,0.1);
   }
 
   /* ---------- 显现 ---------- */
@@ -631,6 +730,7 @@
     .teacher-card { min-height: auto; }
     .photo-row { grid-template-columns: 1fr; }
     .stats-row { grid-template-columns: 1fr; }
+    .moments-closing { text-align: left; }
 
     .footer-top { grid-template-columns: 1fr; gap: 40px; }
     .footer-bottom { flex-direction: column; align-items: flex-start; }
@@ -649,6 +749,8 @@
     .hero-visual { opacity: 1; clip-path: none; }
     .preloader { display: none; }
     .marquee-track { animation: none !important; }
+    .secret-new { opacity: 1 !important; }
+    .secret-line { transform: scaleX(1) rotate(-1.6deg) !important; }
   }
 </style>
 </head>
@@ -663,12 +765,12 @@
 <div class="cursor-ring" id="cursorRing"></div>
 
 <nav class="nav">
-  <a href="#" class="nav-brand">2103</a>
+  <a href="#" class="nav-brand" data-target="top">2103</a>
   <ul class="nav-links">
-    <li><a href="#teachers">老师</a></li>
-    <li><a href="#students">同学</a></li>
-    <li><a href="#moments">影像</a></li>
-    <li><a href="#about">关于</a></li>
+    <li><a href="#teachers" data-target="#teachers">老师</a></li>
+    <li><a href="#students" data-target="#students">同学</a></li>
+    <li><a href="#moments" data-target="#moments">影像</a></li>
+    <li><a href="#about" data-target="#about">关于</a></li>
   </ul>
 </nav>
 
@@ -793,6 +895,9 @@
     </figure>
   </div>
 
+  <!-- 影像结尾文案（随机） -->
+  <p class="moments-closing reveal" id="momentsClosing"></p>
+
   <div class="stats-row reveal">
     <div class="stat-cell">
       <div class="stat-number" data-count="6">0<span class="suffix">年</span></div>
@@ -802,8 +907,14 @@
       <div class="stat-number" data-count="44">0<span class="suffix">人</span></div>
       <div class="stat-label">班级成员</div>
     </div>
-    <div class="stat-cell">
-      <div class="stat-number" data-count="2103">0</div>
+    <div class="stat-cell stat-secret">
+      <div class="secret-wrap">
+        <span class="secret-old-wrap">
+          <span class="secret-text secret-old">新年快乐（bushi）</span>
+          <span class="secret-line" aria-hidden="true"></span>
+        </span>
+        <span class="secret-text secret-new">总有一天我们还会相遇</span>
+      </div>
       <div class="stat-label">我们的暗号</div>
     </div>
   </div>
@@ -829,6 +940,12 @@
       <p>2026 届 六三班</p>
     </div>
   </div>
+
+  <!-- 页面结尾文案（随机） -->
+  <div class="end-line reveal">
+    <p class="end-text" id="endText"></p>
+  </div>
+
   <div class="footer-bottom">
     <span>2103 班 · 生长纪</span>
     <span>一粒种子，六年光阴</span>
@@ -841,6 +958,68 @@
 <script>
 (function () {
   "use strict";
+
+  /* ---------- 随机收尾文案 ---------- */
+  var momentsLines = [
+    "6年的精彩不止于此",
+    "未完待续",
+    "镜头之外，还有更多没被记录的日常",
+    "每一张照片，都是一段时间的出口",
+    "这些定格的光，往后还会继续亮"
+  ];
+  var endLines = [
+    "结束就是新的开始",
+    "散场不是终点，是下一程的起点",
+    "离开这间教室，带走的是六年",
+    "故事到这儿，路还很长",
+    "再见面时，我们都长大了"
+  ];
+
+  var momentsEl = document.getElementById("momentsClosing");
+  if (momentsEl) {
+    momentsEl.textContent = momentsLines[Math.floor(Math.random() * momentsLines.length)];
+  }
+  var endEl = document.getElementById("endText");
+  if (endEl) {
+    endEl.textContent = endLines[Math.floor(Math.random() * endLines.length)];
+  }
+
+  /* ---------- 导航平滑滚动 ---------- */
+  var prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function animateScrollTo(top, instant) {
+    if (instant || !window.gsap) {
+      window.scrollTo(0, top);
+      return;
+    }
+    var scrollObj = { y: window.pageYOffset };
+    gsap.to(scrollObj, {
+      y: top,
+      duration: 1.15,
+      ease: "power3.inOut",
+      overwrite: true,
+      onUpdate: function () {
+        window.scrollTo(0, scrollObj.y);
+      }
+    });
+  }
+
+  function handleNavClick(e) {
+    var target = this.getAttribute("data-target") || this.getAttribute("href");
+    e.preventDefault();
+    if (!target || target === "#" || target === "top") {
+      animateScrollTo(0, prefersReduced);
+      return;
+    }
+    var el = document.querySelector(target);
+    if (!el) return;
+    var top = el.getBoundingClientRect().top + window.pageYOffset - 60;
+    animateScrollTo(Math.max(0, top), prefersReduced);
+  }
+
+  document.querySelectorAll(".nav-links a, .nav-brand").forEach(function (link) {
+    link.addEventListener("click", handleNavClick);
+  });
 
   /* ---------- 学生名单数据 ---------- */
   var students = [
@@ -906,9 +1085,9 @@
     });
   }
 
-  var prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (prefersReduced) {
-    document.getElementById("preloader").style.display = "none";
+    var pre = document.getElementById("preloader");
+    if (pre) pre.style.display = "none";
     document.querySelectorAll(".reveal, .hero-visual, .hero-kicker, .hero-meta-item, .scroll-hint, .student").forEach(function (el) {
       el.style.opacity = "1";
       el.style.transform = "none";
@@ -1000,6 +1179,31 @@
     }
   });
 
+  /* ---------- 暗号：划线保留 → 下方浮现新字 ---------- */
+  var secretWrap = document.querySelector(".secret-wrap");
+  if (secretWrap) {
+    var secretTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".stat-secret",
+        start: "top 78%",
+        once: true
+      }
+    });
+
+    secretTl
+      .to({}, { duration: 0.5 })
+      .to(".secret-line", {
+        scaleX: 1,
+        duration: 0.75,
+        ease: "power2.inOut"
+      })
+      .to({}, { duration: 0.4 })
+      .fromTo(".secret-new",
+        { opacity: 0, y: 10 },
+        { opacity: 1, y: 0, duration: 0.85, ease: "power3.out" }
+      );
+  }
+
   /* ---------- 视差 ---------- */
   gsap.utils.toArray("[data-parallax]").forEach(function (figure) {
     var img = figure.querySelector("img");
@@ -1067,7 +1271,7 @@
       requestAnimationFrame(renderRing);
     })();
 
-    var interactive = "a, button, .stat-cell, .teacher-card, .student, .photo-row figure, .nav-links a";
+    var interactive = "a, button, .stat-cell, .teacher-card, .student, .photo-row figure, .nav-links a, .nav-brand";
     document.querySelectorAll(interactive).forEach(function (el) {
       el.addEventListener("mouseenter", function () { document.body.classList.add("cursor-grow"); });
       el.addEventListener("mouseleave", function () { document.body.classList.remove("cursor-grow"); });
