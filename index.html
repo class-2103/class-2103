@@ -1104,6 +1104,179 @@
   }
   .reveal.visible { opacity: 1; transform: translateY(0); }
 
+  /* 聊天室 */
+  .chat-toggle {
+    position: fixed;
+    right: 28px;
+    bottom: 28px;
+    z-index: 9500;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--ink);
+    color: var(--paper);
+    border: none;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 28px rgba(26,26,26,0.28);
+    transition: transform 0.35s var(--ease-out), background 0.35s;
+  }
+  .chat-toggle.show { display: flex; }
+  .chat-toggle:hover {
+    transform: scale(1.06);
+    background: var(--accent);
+  }
+  .chat-toggle svg { width: 22px; height: 22px; fill: currentColor; }
+  .chat-toggle .badge {
+    position: absolute; top: -4px; right: -4px;
+    min-width: 18px; height: 18px; padding: 0 5px;
+    border-radius: 9px; background: var(--red); color: #fff;
+    font-size: 10px; line-height: 18px; text-align: center;
+    font-family: var(--font-sans); display: none;
+  }
+  .chat-toggle .badge.show { display: block; }
+
+  .chat-panel {
+    position: fixed;
+    right: 28px;
+    bottom: 92px;
+    z-index: 9500;
+    width: min(360px, calc(100vw - 40px));
+    height: min(520px, calc(100vh - 140px));
+    background: var(--paper);
+    border: 1px solid rgba(26,26,26,0.1);
+    border-radius: 8px;
+    box-shadow: 0 24px 72px rgba(26,26,26,0.22);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(16px) scale(0.98);
+    transition: opacity 0.35s var(--ease-out), transform 0.35s var(--ease-out);
+  }
+  .chat-panel.open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+  }
+
+  .chat-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    border-bottom: 1px solid rgba(26,26,26,0.08);
+    background: var(--paper-deep);
+    flex-shrink: 0;
+  }
+  .chat-header h3 {
+    font-family: var(--font-serif);
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: 0.04em;
+  }
+  .chat-header .chat-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--soil);
+    font-size: 18px;
+    line-height: 1;
+    padding: 4px;
+    transition: color 0.3s;
+  }
+  .chat-header .chat-close:hover { color: var(--accent); }
+
+  .chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    scroll-behavior: smooth;
+  }
+  .chat-messages::-webkit-scrollbar { width: 4px; }
+  .chat-messages::-webkit-scrollbar-thumb { background: rgba(92,75,58,0.2); border-radius: 2px; }
+
+  .chat-msg {
+    max-width: 82%;
+    padding: 9px 13px;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    line-height: 1.6;
+    word-break: break-word;
+    animation: chatIn 0.3s var(--ease-out);
+  }
+  @keyframes chatIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .chat-msg.mine {
+    align-self: flex-end;
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .chat-msg.theirs {
+    align-self: flex-start;
+    background: var(--paper-deep);
+    color: var(--ink);
+  }
+  .chat-msg .sender {
+    display: block;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    opacity: 0.65;
+    margin-bottom: 3px;
+  }
+  .chat-msg.mine .sender { text-align: right; }
+
+  .chat-input-row {
+    display: flex;
+    border-top: 1px solid rgba(26,26,26,0.08);
+    flex-shrink: 0;
+  }
+  .chat-input-row input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 14px 16px;
+    font-size: 0.85rem;
+    color: var(--ink);
+    outline: none;
+    font-family: var(--font-sans);
+  }
+  .chat-input-row input::placeholder { color: rgba(92,75,58,0.35); }
+  .chat-input-row button {
+    border: none;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 0 20px;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    font-family: var(--font-sans);
+    transition: background 0.3s;
+  }
+  .chat-input-row button:hover { background: var(--accent); }
+  .chat-input-row button:disabled { opacity: 0.4; cursor: not-allowed; }
+
+  .chat-status {
+    padding: 8px 18px;
+    font-size: 0.68rem;
+    color: var(--soil);
+    background: var(--paper-deep);
+    border-top: 1px solid rgba(26,26,26,0.06);
+    text-align: center;
+    letter-spacing: 0.06em;
+  }
+  .chat-status.online { color: var(--moss); }
+  .chat-status.offline { color: var(--red); }
+
   @media (max-width: 1024px) {
     .students-grid { grid-template-columns: repeat(3, 1fr); }
     .login-view {
@@ -1152,6 +1325,14 @@
     .game-slots { gap: 4px; }
     .game-slot { font-size: 0.58rem; }
     .game-status { text-align: left; min-width: 0; }
+    .chat-toggle { right: 18px; bottom: 18px; width: 46px; height: 46px; }
+    .chat-panel {
+      right: 12px;
+      left: 12px;
+      bottom: 76px;
+      width: auto;
+      height: min(460px, calc(100vh - 120px));
+    }
   }
   @media (prefers-reduced-motion: reduce) {
     * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
@@ -1162,6 +1343,7 @@
     .secret-line { transform: scaleX(1) rotate(-1.6deg) !important; }
   }
 </style>
+<script src="https://cdn.jsdelivr.net/npm/@cloudbase/js-sdk@2/dist/cloudbase.full.js"></script>
 </head>
 <body class="locked">
 
@@ -1171,7 +1353,6 @@
 
 <audio id="bgMusic" src="https://music.163.com/song/media/outer/url?id=2038191895.mp3" loop preload="none" style="display:none;"></audio>
 
-<!-- 登录 -->
 <div class="login-view" id="loginView">
   <div class="login-left">
     <p class="login-kicker">长沙市芙蓉区一中双语隆平学校小学部</p>
@@ -1214,7 +1395,6 @@
   <div class="login-meta">2026 届 · 六三班</div>
 </div>
 
-<!-- 主页 -->
 <div class="home-view" id="homeView">
 
   <nav class="nav">
@@ -1393,9 +1573,33 @@
 
 </div>
 
+<!-- 聊天室 -->
+<button class="chat-toggle" id="chatToggle" type="button" aria-label="聊天室">
+  <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg>
+  <span class="badge" id="chatBadge">0</span>
+</button>
+
+<div class="chat-panel" id="chatPanel">
+  <div class="chat-header">
+    <h3>2103 · 聊天室</h3>
+    <button class="chat-close" id="chatClose" type="button">✕</button>
+  </div>
+  <div class="chat-messages" id="chatMessages"></div>
+  <div class="chat-status" id="chatStatus">连接中…</div>
+  <div class="chat-input-row">
+    <input type="text" id="chatInput" placeholder="说点什么…" autocomplete="off" maxlength="200">
+    <button id="chatSend" type="button" disabled>发送</button>
+  </div>
+</div>
+
 <script>
 (function () {
   'use strict';
+
+  /* =========================================================
+     腾讯云 CloudBase 环境 ID
+     ========================================================= */
+  var CLOUDBASE_ENV_ID = 'class-2103-d8g6mn8o80452428a';
 
   var ACCOUNTS = {
     'LQY':  [{ name: '刘秋熠', pwd: 'LQY666', num: 1 }],
@@ -1478,7 +1682,6 @@
 
   var pendingAccount = null;
 
-  /* 光标 */
   var dot = document.getElementById('cursorDot');
   var ring = document.getElementById('cursorRing');
   var mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
@@ -1501,7 +1704,7 @@
 
   function bindCursorGrow() {
     var els = document.querySelectorAll(
-      'a, button, input, .stat-cell, .teacher-card, .student, .photo-row figure, .nav-links a, .nav-brand, .login-btn, .picker-item, .picker-back, .game-card, .game-btn'
+      'a, button, input, .stat-cell, .teacher-card, .student, .photo-row figure, .nav-links a, .nav-brand, .login-btn, .picker-item, .picker-back, .game-card, .game-btn, .chat-toggle'
     );
     for (var i = 0; i < els.length; i++) {
       var el = els[i];
@@ -1656,29 +1859,21 @@
     doLogin(account);
   }
 
-  /* =========================================================
-     登录成功：主页出场和浮窗同时发生
-     ========================================================= */
   function doLogin(account) {
     try { sessionStorage.setItem('2103_user', account.name); } catch (e) {}
 
-    /* 启动背景音乐 */
     if (bgMusic) {
       bgMusic.volume = 0.35;
       var p = bgMusic.play();
       if (p && p.catch) p.catch(function () {});
     }
 
-    /* 一、立即准备主页（先 display:block 才能有过渡） */
     homeView.classList.add('show');
     document.body.classList.remove('locked');
     window.scrollTo(0, 0);
 
-    /* 二、同时刻触发：
-       - 登录页淡出
-       - 主页淡入
-       - 浮窗出场
-       三者用同一个 rAF 触发，视觉上同步 */
+    toast.innerHTML = 'Hi，<em>' + account.name + '</em> 同学';
+
     requestAnimationFrame(function () {
       requestAnimationFrame(function () {
         loginView.classList.add('out');
@@ -1687,31 +1882,25 @@
       });
     });
 
-    /* 浮窗内容填上 */
-    toast.innerHTML = 'Hi，<em>' + account.name + '</em> 同学';
-
-    /* 浮窗停留 2.6 秒后向上淡出（此时主页已在场上） */
     setTimeout(function () {
       toast.classList.remove('in');
       toast.classList.add('out');
     }, 2600);
 
-    /* 登录页淡出 0.8 秒后彻底移除，避免挡住主页 */
     setTimeout(function () {
       loginView.style.display = 'none';
       loginView.classList.remove('in', 'out');
     }, 850);
 
-    /* 主页滚动显现、计数、暗号、游戏在浮窗可见的同时初始化 */
     setTimeout(function () {
       initReveal();
       initCounters();
       initSecret();
       initGame(1);
+      initChat();
     }, 300);
   }
 
-  /* 学生名单 */
   var students = [
     { num: 1,  name: '刘秋熠' },
     { num: 2,  name: '刘承希' },
@@ -1773,7 +1962,6 @@
     });
   }
 
-  /* 随机文案 */
   var momentsLines = [
     '6年的精彩不止于此',
     '未完待续',
@@ -1916,9 +2104,7 @@
     });
   });
 
-  /* =========================================================
-     三了个班小游戏
-     ========================================================= */
+  /* 三了个班 */
   var gameNames = [
     '钟诗佳', '蒋琪', '罗艳',
     '刘秋熠', '刘承希', '周凡博', '颜佳浩', '言墨轩', '李林希',
@@ -2120,6 +2306,172 @@
         renderStage();
       }
     }, 200);
+  });
+
+  /* 聊天室 */
+  var chatToggle   = document.getElementById('chatToggle');
+  var chatPanel    = document.getElementById('chatPanel');
+  var chatClose    = document.getElementById('chatClose');
+  var chatMessages = document.getElementById('chatMessages');
+  var chatInput    = document.getElementById('chatInput');
+  var chatSend     = document.getElementById('chatSend');
+  var chatStatus   = document.getElementById('chatStatus');
+  var chatBadge    = document.getElementById('chatBadge');
+
+  var chatApp          = null;
+  var chatDb           = null;
+  var chatWatcher      = null;
+  var chatUnread       = 0;
+  var chatOpen         = false;
+  var currentUserName  = '';
+  var renderedMsgIds   = {};
+
+  try {
+    currentUserName = sessionStorage.getItem('2103_user') || '';
+  } catch (e) {}
+
+  function toggleChat() {
+    chatOpen = !chatOpen;
+    chatPanel.classList.toggle('open', chatOpen);
+    if (chatOpen) {
+      chatUnread = 0;
+      chatBadge.classList.remove('show');
+      chatBadge.textContent = '0';
+      setTimeout(function () { chatInput.focus(); }, 300);
+    }
+  }
+  chatToggle.addEventListener('click', toggleChat);
+  chatClose.addEventListener('click', toggleChat);
+
+  function appendMessage(name, text, isMine, msgId) {
+    if (msgId && renderedMsgIds[msgId]) return;
+    if (msgId) renderedMsgIds[msgId] = true;
+
+    var div = document.createElement('div');
+    div.className = 'chat-msg ' + (isMine ? 'mine' : 'theirs');
+    var span = document.createElement('span');
+    span.className = 'sender';
+    span.textContent = name;
+    div.appendChild(span);
+    div.appendChild(document.createTextNode(text));
+    chatMessages.appendChild(div);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+
+    if (!chatOpen && !isMine) {
+      chatUnread++;
+      chatBadge.textContent = chatUnread > 99 ? '99+' : chatUnread;
+      chatBadge.classList.add('show');
+    }
+  }
+
+  function initChat() {
+    if (typeof cloudbase === 'undefined') {
+      chatStatus.textContent = '聊天室加载失败，请刷新重试';
+      chatStatus.classList.add('offline');
+      return;
+    }
+
+    if (!currentUserName) {
+      chatStatus.textContent = '请先登录后再使用聊天室';
+      chatStatus.classList.add('offline');
+      return;
+    }
+
+    chatToggle.classList.add('show');
+
+    try {
+      chatApp = cloudbase.init({ env: CLOUDBASE_ENV_ID });
+      var auth = chatApp.auth({ persistence: 'local' });
+
+      auth.signInAnonymously().then(function () {
+        chatDb = chatApp.database();
+
+        chatStatus.textContent = '已连接';
+        chatStatus.classList.add('online');
+        chatStatus.classList.remove('offline');
+        chatSend.disabled = false;
+
+        /* 先加载历史消息 */
+        return chatDb.collection('chat_messages')
+          .orderBy('createdAt', 'asc')
+          .limit(50)
+          .get();
+      }).then(function (res) {
+        if (res && res.data) {
+          res.data.forEach(function (doc) {
+            renderedMsgIds[doc._id] = true;
+            appendMessage(doc.sender, doc.text, doc.sender === currentUserName, doc._id);
+          });
+        }
+
+        /* 再监听新消息 */
+        chatWatcher = chatDb.collection('chat_messages')
+          .orderBy('createdAt', 'asc')
+          .limit(50)
+          .watch({
+            onChange: function (snapshot) {
+              if (snapshot.docChanges) {
+                snapshot.docChanges.forEach(function (change) {
+                  if (change.dataType === 'add') {
+                    var doc = change.doc;
+                    if (doc._id && renderedMsgIds[doc._id]) return;
+                    appendMessage(doc.sender, doc.text, doc.sender === currentUserName, doc._id);
+                  }
+                });
+              }
+            },
+            onError: function (err) {
+              console.error('聊天室监听出错', err);
+              chatStatus.textContent = '连接中断，请刷新页面';
+              chatStatus.classList.add('offline');
+            }
+          });
+      }).catch(function (err) {
+        console.error('聊天室初始化失败', err);
+        chatStatus.textContent = '连接失败，请刷新重试';
+        chatStatus.classList.add('offline');
+      });
+
+    } catch (e) {
+      console.error('聊天室初始化失败', e);
+      chatStatus.textContent = '连接失败';
+      chatStatus.classList.add('offline');
+    }
+  }
+
+  function sendChatMessage() {
+    var text = chatInput.value.trim();
+    if (!text || !chatDb) return;
+
+    chatInput.value = '';
+    chatSend.disabled = true;
+
+    chatDb.collection('chat_messages').add({
+      sender: currentUserName,
+      text: text,
+      createdAt: new Date()
+    }).then(function () {
+      chatSend.disabled = false;
+      chatInput.focus();
+    }).catch(function (err) {
+      console.error('发送失败', err);
+      chatSend.disabled = false;
+      chatStatus.textContent = '发送失败，请重试';
+      chatStatus.classList.add('offline');
+      setTimeout(function () {
+        chatStatus.textContent = '已连接';
+        chatStatus.classList.add('online');
+        chatStatus.classList.remove('offline');
+      }, 2000);
+    });
+  }
+
+  chatSend.addEventListener('click', sendChatMessage);
+  chatInput.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      sendChatMessage();
+    }
   });
 
 })();
