@@ -32,7 +32,7 @@
   }
   body.locked { overflow: hidden; height: 100vh; }
 
-  /* 纸张噪点（全局） */
+  /* 纸张噪点 */
   body::before {
     content: "";
     position: fixed;
@@ -106,9 +106,7 @@
     transition: opacity 0.95s cubic-bezier(0.4, 0, 0.6, 1), transform 0.95s cubic-bezier(0.4, 0, 0.6, 1);
   }
 
-  /* ============================================================
-     登录视图（与主页同风格）
-     ============================================================ */
+  /* 登录视图 */
   .login-view {
     position: fixed;
     inset: 0;
@@ -323,9 +321,7 @@
     z-index: -1;
   }
   .login-btn:hover::before { transform: translateY(0); }
-  .login-btn:hover {
-    transform: translateY(-1px);
-  }
+  .login-btn:hover { transform: translateY(-1px); }
   .login-btn:active { transform: translateY(0); }
 
   .login-error {
@@ -341,7 +337,7 @@
   }
   .login-error.show { opacity: 1; transform: translateY(0); }
 
-  /* 选择层（覆盖在卡片上） */
+  /* 选择层 */
   .picker {
     position: absolute;
     inset: 0;
@@ -419,7 +415,7 @@
   }
   .picker-back:hover { color: var(--accent); }
 
-  /* 左下角装饰信息 */
+  /* 左下角装饰 */
   .login-meta {
     position: absolute;
     left: clamp(24px, 8vw, 140px);
@@ -433,9 +429,7 @@
   }
   .login-view.in .login-meta { opacity: 0.7; }
 
-  /* ============================================================
-     主页视图
-     ============================================================ */
+  /* 主页视图 */
   .home-view {
     display: none;
     opacity: 0;
@@ -1042,6 +1036,9 @@
 <div class="cursor-ring" id="cursorRing"></div>
 <div class="toast" id="toast"></div>
 
+<!-- 背景音乐 -->
+<audio id="bgMusic" src="assets/juebieshu.mp3" loop preload="auto" style="display:none;"></audio>
+
 <!-- 登录视图 -->
 <div class="login-view" id="loginView">
 
@@ -1338,6 +1335,7 @@
   var pickerTitle = document.getElementById('pickerTitle');
   var pickerList = document.getElementById('pickerList');
   var pickerBack = document.getElementById('pickerBack');
+  var bgMusic    = document.getElementById('bgMusic');
 
   var pendingAccount = null;
   var homeInitialized = false;
@@ -1532,6 +1530,15 @@
 
   function doLogin(account) {
     try { sessionStorage.setItem('2103_user', account.name); } catch (e) {}
+
+    // 播放背景音乐
+    if (bgMusic) {
+      bgMusic.volume = 0.35;
+      bgMusic.play().catch(function () {
+        // 静默处理播放失败
+      });
+    }
+
     loginView.classList.add('out');
     setTimeout(function () {
       showToast(account.name);
