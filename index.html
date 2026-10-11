@@ -43,7 +43,6 @@
     mix-blend-mode: multiply;
   }
 
-  /* 光标 */
   .cursor-dot {
     position: fixed; top: 0; left: 0;
     width: 6px; height: 6px;
@@ -104,7 +103,6 @@
     transition: opacity 0.95s cubic-bezier(0.4, 0, 0.6, 1), transform 0.95s cubic-bezier(0.4, 0, 0.6, 1);
   }
 
-  /* 登录 */
   .login-view {
     position: fixed;
     inset: 0;
@@ -117,13 +115,13 @@
     background: var(--paper);
     color: var(--ink);
     opacity: 0;
-    transition: opacity 1s var(--ease-out);
+    transition: opacity 0.8s var(--ease-out);
   }
   .login-view.in { opacity: 1; }
   .login-view.out {
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.7s cubic-bezier(0.4, 0, 0.6, 1);
+    transition: opacity 0.8s var(--ease-out);
   }
 
   .login-left {
@@ -415,7 +413,6 @@
   }
   .login-view.in .login-meta { opacity: 0.7; }
 
-  /* 主页 */
   .home-view {
     display: none;
     position: relative;
@@ -494,7 +491,7 @@
     color: var(--soil);
     opacity: 0;
     transform: translateY(16px);
-    transition: opacity 0.8s var(--ease-out) 0.5s, transform 0.8s var(--ease-out) 0.5s;
+    transition: opacity 0.8s var(--ease-out) 0.3s, transform 0.8s var(--ease-out) 0.3s;
   }
   .home-view.in .hero-kicker { opacity: 1; transform: translateY(0); }
   .hero-title {
@@ -512,8 +509,8 @@
     transform: translateY(110%);
     transition: transform 1.1s var(--ease-out);
   }
-  .hero-title .line:nth-child(1) span { transition-delay: 0.1s; }
-  .hero-title .line:nth-child(2) span { transition-delay: 0.22s; }
+  .hero-title .line:nth-child(1) span { transition-delay: 0.05s; }
+  .hero-title .line:nth-child(2) span { transition-delay: 0.17s; }
   .home-view.in .hero-title .line span { transform: translateY(0); }
   .hero-title .accent { color: var(--accent); font-style: italic; }
   .hero-meta {
@@ -528,9 +525,9 @@
     transform: translateY(16px);
     transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
   }
-  .home-view.in .hero-meta-item:nth-child(1) { transition-delay: 0.8s; opacity: 1; transform: translateY(0); }
-  .home-view.in .hero-meta-item:nth-child(2) { transition-delay: 0.9s; opacity: 1; transform: translateY(0); }
-  .home-view.in .hero-meta-item:nth-child(3) { transition-delay: 1.0s; opacity: 1; transform: translateY(0); }
+  .home-view.in .hero-meta-item:nth-child(1) { transition-delay: 0.55s; opacity: 1; transform: translateY(0); }
+  .home-view.in .hero-meta-item:nth-child(2) { transition-delay: 0.65s; opacity: 1; transform: translateY(0); }
+  .home-view.in .hero-meta-item:nth-child(3) { transition-delay: 0.75s; opacity: 1; transform: translateY(0); }
   .hero-meta-label {
     font-size: 0.68rem;
     letter-spacing: 0.15em;
@@ -553,7 +550,7 @@
     z-index: 1;
     opacity: 0;
     clip-path: inset(0 0 100% 0);
-    transition: opacity 1.4s var(--ease-out) 0.3s, clip-path 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;
+    transition: opacity 1.4s var(--ease-out) 0.1s, clip-path 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.1s;
   }
   .home-view.in .hero-visual {
     opacity: 1;
@@ -564,7 +561,7 @@
     object-fit: cover;
     display: block;
     transform: scale(1.12);
-    transition: transform 1.8s var(--ease-out) 0.3s;
+    transition: transform 1.8s var(--ease-out) 0.1s;
   }
   .home-view.in .hero-visual img { transform: scale(1); }
 
@@ -578,7 +575,7 @@
     align-items: center;
     gap: 8px;
     opacity: 0;
-    transition: opacity 0.6s var(--ease-out) 1.4s;
+    transition: opacity 0.6s var(--ease-out) 1.1s;
   }
   .home-view.in .scroll-hint { opacity: 1; }
   .scroll-hint span {
@@ -597,7 +594,6 @@
     50% { opacity: 1; transform: scaleY(1); transform-origin: top; }
   }
 
-  /* 跑马灯 */
   .marquee-section {
     padding: clamp(40px, 8vh, 80px) 0;
     border-top: 1px solid rgba(26,26,26,0.08);
@@ -888,7 +884,6 @@
   }
   .secret-line.animate { transform: scaleX(1) rotate(-1.6deg); }
 
-  /* 游戏 */
   .game-section { background: var(--paper-deep); }
   .game-wrap {
     background: var(--paper);
@@ -911,11 +906,7 @@
   .game-level { font-family: var(--font-serif); color: var(--ink); }
   .game-level em { font-style: normal; color: var(--accent); font-weight: 600; }
   .game-progress { margin-left: auto; }
-  .game-status {
-    min-width: 150px;
-    text-align: right;
-    transition: color .3s;
-  }
+  .game-status { min-width: 150px; text-align: right; transition: color .3s; }
   .game-status.win { color: var(--moss); }
   .game-status.lose { color: var(--red); }
   .game-btn {
@@ -1106,7 +1097,6 @@
     border-top: 1px solid rgba(26,26,26,0.1);
   }
 
-  /* 滚动显现 */
   .reveal {
     opacity: 0;
     transform: translateY(40px);
@@ -1666,53 +1656,59 @@
     doLogin(account);
   }
 
+  /* =========================================================
+     登录成功：主页出场和浮窗同时发生
+     ========================================================= */
   function doLogin(account) {
     try { sessionStorage.setItem('2103_user', account.name); } catch (e) {}
 
+    /* 启动背景音乐 */
     if (bgMusic) {
       bgMusic.volume = 0.35;
       var p = bgMusic.play();
       if (p && p.catch) p.catch(function () {});
     }
 
-    loginView.classList.add('out');
-    setTimeout(function () { showToast(account.name); }, 300);
-  }
-
-  function showToast(name) {
-    toast.innerHTML = 'Hi，<em>' + name + '</em> 同学';
-    requestAnimationFrame(function () {
-      requestAnimationFrame(function () {
-        toast.classList.add('in');
-      });
-    });
-    setTimeout(function () {
-      toast.classList.remove('in');
-      toast.classList.add('out');
-    }, 2600);
-    setTimeout(function () { switchToHome(); }, 3000);
-  }
-
-  function switchToHome() {
-    loginView.style.display = 'none';
-    loginView.classList.remove('in', 'out');
-
+    /* 一、立即准备主页（先 display:block 才能有过渡） */
     homeView.classList.add('show');
     document.body.classList.remove('locked');
     window.scrollTo(0, 0);
 
+    /* 二、同时刻触发：
+       - 登录页淡出
+       - 主页淡入
+       - 浮窗出场
+       三者用同一个 rAF 触发，视觉上同步 */
     requestAnimationFrame(function () {
       requestAnimationFrame(function () {
+        loginView.classList.add('out');
         homeView.classList.add('in');
+        toast.classList.add('in');
       });
     });
 
+    /* 浮窗内容填上 */
+    toast.innerHTML = 'Hi，<em>' + account.name + '</em> 同学';
+
+    /* 浮窗停留 2.6 秒后向上淡出（此时主页已在场上） */
+    setTimeout(function () {
+      toast.classList.remove('in');
+      toast.classList.add('out');
+    }, 2600);
+
+    /* 登录页淡出 0.8 秒后彻底移除，避免挡住主页 */
+    setTimeout(function () {
+      loginView.style.display = 'none';
+      loginView.classList.remove('in', 'out');
+    }, 850);
+
+    /* 主页滚动显现、计数、暗号、游戏在浮窗可见的同时初始化 */
     setTimeout(function () {
       initReveal();
       initCounters();
       initSecret();
       initGame(1);
-    }, 200);
+    }, 300);
   }
 
   /* 学生名单 */
@@ -1798,7 +1794,6 @@
   var endEl = document.getElementById('endText');
   if (endEl) endEl.textContent = endLines[Math.floor(Math.random() * endLines.length)];
 
-  /* 滚动显现 - IntersectionObserver */
   function initReveal() {
     var revealEls = document.querySelectorAll('.reveal');
     if ('IntersectionObserver' in window) {
@@ -1815,7 +1810,6 @@
       revealEls.forEach(function (el) { el.classList.add('visible'); });
     }
 
-    /* 学生名单 stagger */
     var studentEls = document.querySelectorAll('.student');
     if ('IntersectionObserver' in window) {
       var obsS = new IntersectionObserver(function (entries) {
@@ -1835,7 +1829,6 @@
     }
   }
 
-  /* 数字计数 */
   function initCounters() {
     var countEls = document.querySelectorAll('[data-count]');
     if ('IntersectionObserver' in window) {
@@ -1867,7 +1860,6 @@
     requestAnimationFrame(step);
   }
 
-  /* 暗号 */
   function initSecret() {
     var cell = document.getElementById('secretCell');
     var line = document.getElementById('secretLine');
@@ -1891,7 +1883,6 @@
     }
   }
 
-  /* 平滑滚动 */
   function smoothScrollTo(targetY, duration) {
     var startY = window.pageYOffset;
     var diff = targetY - startY;
