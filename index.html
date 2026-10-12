@@ -1104,7 +1104,6 @@
   }
   .reveal.visible { opacity: 1; transform: translateY(0); }
 
-  /* 聊天室 */
   .chat-toggle {
     position: fixed;
     right: 28px;
@@ -2320,10 +2319,6 @@
   var currentUserName  = '';
   var renderedMsgIds   = {};
 
-  try {
-    currentUserName = sessionStorage.getItem('2103_user') || '';
-  } catch (e) {}
-
   function toggleChat() {
     chatOpen = !chatOpen;
     chatPanel.classList.toggle('open', chatOpen);
@@ -2359,6 +2354,11 @@
   }
 
   function initChat() {
+    /* 关键修复：登录后重新读取 sessionStorage 里的用户名 */
+    try {
+      currentUserName = sessionStorage.getItem('2103_user') || '';
+    } catch (e) {}
+
     if (typeof cloudbase === 'undefined') {
       chatStatus.textContent = '聊天室加载失败，请刷新重试';
       chatStatus.classList.add('offline');
@@ -2372,6 +2372,7 @@
     }
 
     chatToggle.classList.add('show');
+    bindCursorGrow();
 
     try {
       chatApp = cloudbase.init({ env: CLOUDBASE_ENV_ID });
