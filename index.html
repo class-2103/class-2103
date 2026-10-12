@@ -1343,7 +1343,7 @@
     .secret-line { transform: scaleX(1) rotate(-1.6deg) !important; }
   }
 </style>
-<script src="https://cdn.jsdelivr.net/npm/@cloudbase/js-sdk@2/dist/cloudbase.full.js"></script>
+<script src="https://static.cloudbase.net/cloudbase-js-sdk/latest/cloudbase.full.js"></script>
 </head>
 <body class="locked">
 
@@ -1573,7 +1573,6 @@
 
 </div>
 
-<!-- 聊天室 -->
 <button class="chat-toggle" id="chatToggle" type="button" aria-label="聊天室">
   <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg>
   <span class="badge" id="chatBadge">0</span>
@@ -1596,9 +1595,6 @@
 (function () {
   'use strict';
 
-  /* =========================================================
-     腾讯云 CloudBase 环境 ID
-     ========================================================= */
   var CLOUDBASE_ENV_ID = 'class-2103-d8g6mn8o80452428a';
 
   var ACCOUNTS = {
@@ -2104,7 +2100,6 @@
     });
   });
 
-  /* 三了个班 */
   var gameNames = [
     '钟诗佳', '蒋琪', '罗艳',
     '刘秋熠', '刘承希', '周凡博', '颜佳浩', '言墨轩', '李林希',
@@ -2308,7 +2303,6 @@
     }, 200);
   });
 
-  /* 聊天室 */
   var chatToggle   = document.getElementById('chatToggle');
   var chatPanel    = document.getElementById('chatPanel');
   var chatClose    = document.getElementById('chatClose');
@@ -2391,7 +2385,6 @@
         chatStatus.classList.remove('offline');
         chatSend.disabled = false;
 
-        /* 先加载历史消息 */
         return chatDb.collection('chat_messages')
           .orderBy('createdAt', 'asc')
           .limit(50)
@@ -2404,7 +2397,6 @@
           });
         }
 
-        /* 再监听新消息 */
         chatWatcher = chatDb.collection('chat_messages')
           .orderBy('createdAt', 'asc')
           .limit(50)
