@@ -103,7 +103,6 @@
     transition: opacity 0.95s cubic-bezier(0.4, 0, 0.6, 1), transform 0.95s cubic-bezier(0.4, 0, 0.6, 1);
   }
 
-  /* 更新公告 */
   .update-modal {
     position: fixed;
     inset: 0;
@@ -119,10 +118,7 @@
     pointer-events: none;
     transition: opacity 0.5s var(--ease-out);
   }
-  .update-modal.show {
-    opacity: 1;
-    pointer-events: auto;
-  }
+  .update-modal.show { opacity: 1; pointer-events: auto; }
   .update-card {
     position: relative;
     width: min(400px, calc(100vw - 48px));
@@ -135,9 +131,7 @@
     transition: transform 0.55s var(--ease-out);
     overflow: hidden;
   }
-  .update-modal.show .update-card {
-    transform: translateY(0) scale(1);
-  }
+  .update-modal.show .update-card { transform: translateY(0) scale(1); }
   .update-card::before {
     content: "";
     position: absolute;
@@ -147,7 +141,6 @@
   }
   .update-badge {
     display: inline-block;
-    font-family: var(--font-sans);
     font-size: 0.62rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
@@ -162,7 +155,6 @@
     font-size: 22px;
     font-weight: 500;
     letter-spacing: -0.01em;
-    color: var(--ink);
     margin-bottom: 6px;
     line-height: 1.3;
   }
@@ -173,31 +165,20 @@
     letter-spacing: 0.08em;
     margin-bottom: 24px;
   }
-  .update-version em {
-    font-style: normal;
-    color: var(--accent);
-    font-weight: 600;
-  }
-  .update-list {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 26px;
-  }
+  .update-version em { font-style: normal; color: var(--accent); font-weight: 600; }
+  .update-list { list-style: none; padding: 0; margin: 0 0 26px; }
   .update-list li {
     position: relative;
     padding-left: 20px;
     font-size: 0.86rem;
     line-height: 1.9;
-    color: var(--ink);
     margin-bottom: 10px;
   }
   .update-list li::before {
     content: "";
     position: absolute;
-    left: 4px;
-    top: 12px;
-    width: 5px;
-    height: 5px;
+    left: 4px; top: 12px;
+    width: 5px; height: 5px;
     border-radius: 50%;
     background: var(--accent);
   }
@@ -215,10 +196,7 @@
     cursor: pointer;
     transition: background 0.35s var(--ease-out), transform 0.35s var(--ease-out);
   }
-  .update-close:hover {
-    background: var(--accent);
-    transform: translateY(-1px);
-  }
+  .update-close:hover { background: var(--accent); transform: translateY(-1px); }
 
   .login-view {
     position: fixed;
@@ -429,7 +407,6 @@
   }
   .login-btn:hover::before { transform: translateY(0); }
   .login-btn:hover { transform: translateY(-1px); }
-  .login-btn:active { transform: translateY(0); }
 
   .login-error {
     margin-top: 18px;
@@ -530,10 +507,7 @@
   }
   .login-view.in .login-meta { opacity: 0.7; }
 
-  .home-view {
-    display: none;
-    position: relative;
-  }
+  .home-view { display: none; position: relative; }
   .home-view.show { display: block; }
 
   .nav {
@@ -732,10 +706,7 @@
     flex-shrink: 0;
     animation: marquee 60s linear infinite;
   }
-  @keyframes marquee {
-    from { transform: translateX(0); }
-    to { transform: translateX(-100%); }
-  }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-100%); } }
   .marquee-content .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
   .marquee-content .outline { color: transparent; -webkit-text-stroke: 1px rgba(26,26,26,0.3); }
 
@@ -750,12 +721,7 @@
     gap: 24px;
     margin-bottom: clamp(48px, 10vh, 100px);
   }
-  .section-index {
-    font-family: var(--font-serif);
-    font-size: 0.78rem;
-    color: var(--accent);
-    letter-spacing: 0.05em;
-  }
+  .section-index { font-family: var(--font-serif); font-size: 0.78rem; color: var(--accent); letter-spacing: 0.05em; }
   .section-title {
     font-family: var(--font-serif);
     font-size: clamp(1.8rem, 4.5vw, 3.2rem);
@@ -807,12 +773,7 @@
     border-bottom: 1px solid rgba(26,26,26,0.08);
   }
   .teacher-role .sep { color: var(--accent); margin: 0 6px; }
-  .teacher-note {
-    font-size: 0.82rem;
-    line-height: 1.9;
-    color: #555;
-    margin-top: auto;
-  }
+  .teacher-note { font-size: 0.82rem; line-height: 1.9; color: #555; margin-top: auto; }
   .teacher-note strong { color: var(--ink); font-weight: 500; }
 
   .students-grid {
@@ -919,12 +880,7 @@
     color: var(--soil);
     line-height: 1.6;
   }
-  .moments-closing::before {
-    content: "—";
-    margin-right: 10px;
-    color: var(--accent);
-    font-style: normal;
-  }
+  .moments-closing::before { content: "—"; margin-right: 10px; color: var(--accent); font-style: normal; }
 
   .stats-row {
     display: grid;
@@ -997,7 +953,6 @@
     transform-origin: left center;
     transform: scaleX(0) rotate(-1.6deg);
     transition: transform 0.75s var(--ease-out);
-    box-shadow: 0 0 0.5px rgba(192,57,43,0.4);
   }
   .secret-line.animate { transform: scaleX(1) rotate(-1.6deg); }
 
@@ -1039,7 +994,6 @@
     transition: all .3s var(--ease-out);
   }
   .game-btn:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
-
   .game-stage {
     position: relative;
     width: 100%;
@@ -1063,7 +1017,6 @@
     padding: 0;
     user-select: none;
     transition: transform .25s var(--ease-out), opacity .25s, box-shadow .25s, background .25s;
-    will-change: transform, opacity;
   }
   .game-card:hover {
     background: var(--paper-deep);
@@ -1071,7 +1024,6 @@
     transform: translateY(-2px);
   }
   .game-card.taken { pointer-events: none; }
-
   .game-slots {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
@@ -1174,8 +1126,6 @@
     color: var(--ink);
     text-decoration: none;
   }
-  .footer-col a:hover { color: var(--accent); }
-
   .end-line {
     padding: clamp(64px, 12vh, 140px) 0 clamp(48px, 8vh, 80px);
     text-align: center;
@@ -1200,7 +1150,6 @@
     max-width: 24ch;
     margin: 0 auto;
   }
-
   .footer-bottom {
     display: flex;
     justify-content: space-between;
@@ -1240,10 +1189,7 @@
     transition: transform 0.35s var(--ease-out), background 0.35s;
   }
   .chat-toggle.show { display: flex; }
-  .chat-toggle:hover {
-    transform: scale(1.06);
-    background: var(--accent);
-  }
+  .chat-toggle:hover { transform: scale(1.06); background: var(--accent); }
   .chat-toggle svg { width: 22px; height: 22px; fill: currentColor; }
   .chat-toggle .badge {
     position: absolute; top: -4px; right: -4px;
@@ -1273,12 +1219,7 @@
     transform: translateY(16px) scale(0.98);
     transition: opacity 0.35s var(--ease-out), transform 0.35s var(--ease-out);
   }
-  .chat-panel.open {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateY(0) scale(1);
-  }
-
+  .chat-panel.open { opacity: 1; pointer-events: auto; transform: translateY(0) scale(1); }
   .chat-header {
     display: flex;
     align-items: center;
@@ -1288,25 +1229,13 @@
     background: var(--paper-deep);
     flex-shrink: 0;
   }
-  .chat-header h3 {
-    font-family: var(--font-serif);
-    font-size: 0.92rem;
-    font-weight: 500;
-    color: var(--ink);
-    letter-spacing: 0.04em;
-  }
+  .chat-header h3 { font-family: var(--font-serif); font-size: 0.92rem; font-weight: 500; letter-spacing: 0.04em; }
   .chat-header .chat-close {
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: var(--soil);
-    font-size: 18px;
-    line-height: 1;
-    padding: 4px;
+    background: none; border: none; cursor: pointer;
+    color: var(--soil); font-size: 18px; line-height: 1; padding: 4px;
     transition: color 0.3s;
   }
   .chat-header .chat-close:hover { color: var(--accent); }
-
   .chat-messages {
     flex: 1;
     overflow-y: auto;
@@ -1318,7 +1247,6 @@
   }
   .chat-messages::-webkit-scrollbar { width: 4px; }
   .chat-messages::-webkit-scrollbar-thumb { background: rgba(92,75,58,0.2); border-radius: 2px; }
-
   .chat-msg {
     max-width: 82%;
     padding: 9px 13px;
@@ -1328,70 +1256,299 @@
     word-break: break-word;
     animation: chatIn 0.3s var(--ease-out);
   }
-  @keyframes chatIn {
-    from { opacity: 0; transform: translateY(6px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  .chat-msg.mine {
-    align-self: flex-end;
-    background: var(--ink);
-    color: var(--paper);
-  }
-  .chat-msg.theirs {
-    align-self: flex-start;
-    background: var(--paper-deep);
-    color: var(--ink);
-  }
-  .chat-msg .sender {
-    display: block;
-    font-size: 0.62rem;
-    letter-spacing: 0.08em;
-    opacity: 0.65;
-    margin-bottom: 3px;
-  }
+  @keyframes chatIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+  .chat-msg.mine { align-self: flex-end; background: var(--ink); color: var(--paper); }
+  .chat-msg.theirs { align-self: flex-start; background: var(--paper-deep); color: var(--ink); }
+  .chat-msg .sender { display: block; font-size: 0.62rem; letter-spacing: 0.08em; opacity: 0.65; margin-bottom: 3px; }
   .chat-msg.mine .sender { text-align: right; }
-
-  .chat-input-row {
-    display: flex;
-    border-top: 1px solid rgba(26,26,26,0.08);
-    flex-shrink: 0;
-  }
+  .chat-input-row { display: flex; border-top: 1px solid rgba(26,26,26,0.08); flex-shrink: 0; }
   .chat-input-row input {
-    flex: 1;
-    border: none;
-    background: transparent;
-    padding: 14px 16px;
-    font-size: 0.85rem;
-    color: var(--ink);
-    outline: none;
-    font-family: var(--font-sans);
+    flex: 1; border: none; background: transparent; padding: 14px 16px;
+    font-size: 0.85rem; color: var(--ink); outline: none; font-family: var(--font-sans);
   }
   .chat-input-row input::placeholder { color: rgba(92,75,58,0.35); }
   .chat-input-row button {
-    border: none;
-    background: var(--ink);
-    color: var(--paper);
-    padding: 0 20px;
-    font-size: 0.78rem;
-    letter-spacing: 0.1em;
-    cursor: pointer;
-    font-family: var(--font-sans);
+    border: none; background: var(--ink); color: var(--paper);
+    padding: 0 20px; font-size: 0.78rem; letter-spacing: 0.1em;
+    cursor: pointer; font-family: var(--font-sans);
     transition: background 0.3s;
   }
   .chat-input-row button:hover { background: var(--accent); }
   .chat-input-row button:disabled { opacity: 0.4; cursor: not-allowed; }
-
   .chat-status {
-    padding: 8px 18px;
-    font-size: 0.68rem;
-    color: var(--soil);
-    background: var(--paper-deep);
-    border-top: 1px solid rgba(26,26,26,0.06);
-    text-align: center;
-    letter-spacing: 0.06em;
+    padding: 8px 18px; font-size: 0.68rem; color: var(--soil);
+    background: var(--paper-deep); border-top: 1px solid rgba(26,26,26,0.06);
+    text-align: center; letter-spacing: 0.06em;
   }
   .chat-status.online { color: var(--moss); }
   .chat-status.offline { color: var(--red); }
+
+  /* ========== 管理员面板 ========== */
+  .admin-panel {
+    position: fixed;
+    inset: 0;
+    z-index: 20000;
+    background: var(--paper);
+    overflow-y: auto;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s var(--ease-out);
+  }
+  .admin-panel.show { display: block; }
+  .admin-panel.in { opacity: 1; }
+  .admin-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: clamp(60px, 10vh, 100px) 24px 80px;
+  }
+  .admin-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 24px;
+    border-bottom: 2px solid var(--accent);
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .admin-title {
+    font-family: var(--font-serif);
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+  }
+  .admin-title em {
+    font-style: normal;
+    font-size: 0.6em;
+    color: var(--accent);
+    margin-left: 10px;
+    letter-spacing: 0.1em;
+  }
+  .admin-logout {
+    padding: 10px 22px;
+    background: transparent;
+    border: 1px solid rgba(26,26,26,0.18);
+    border-radius: 4px;
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--soil);
+    cursor: pointer;
+    transition: all 0.3s var(--ease-out);
+  }
+  .admin-logout:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+  .admin-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  .admin-add {
+    padding: 12px 22px;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-family: var(--font-sans);
+    font-size: 0.76rem;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+    transition: transform 0.3s var(--ease-out), background 0.3s;
+  }
+  .admin-add:hover { transform: translateY(-1px); background: var(--ink); }
+  .admin-count {
+    font-size: 0.76rem;
+    color: var(--soil);
+    letter-spacing: 0.08em;
+    margin-left: auto;
+  }
+
+  .admin-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .admin-group {
+    background: var(--paper-deep);
+    border: 1px solid rgba(26,26,26,0.08);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .admin-group-header {
+    padding: 12px 18px;
+    background: rgba(26,26,26,0.03);
+    border-bottom: 1px solid rgba(26,26,26,0.06);
+    font-family: var(--font-serif);
+    font-size: 0.86rem;
+    letter-spacing: 0.08em;
+    color: var(--soil);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .admin-group-header .key {
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .admin-user {
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border-bottom: 1px solid rgba(26,26,26,0.05);
+    transition: background 0.3s;
+  }
+  .admin-user:last-child { border-bottom: none; }
+  .admin-user:hover { background: rgba(26,26,26,0.02); }
+  .admin-user.banned { opacity: 0.55; }
+  .admin-user.banned .admin-user-name { text-decoration: line-through; }
+  .admin-user-info { flex: 1; min-width: 0; }
+  .admin-user-name {
+    font-family: var(--font-serif);
+    font-size: 0.98rem;
+    color: var(--ink);
+    margin-bottom: 3px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .admin-user-name .status {
+    font-family: var(--font-sans);
+    font-size: 0.58rem;
+    letter-spacing: 0.12em;
+    padding: 2px 6px;
+    border-radius: 3px;
+    background: rgba(192,57,43,0.12);
+    color: var(--red);
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .admin-user-meta {
+    font-size: 0.72rem;
+    color: var(--soil);
+    letter-spacing: 0.04em;
+  }
+  .admin-user-meta span + span::before {
+    content: "·";
+    margin: 0 8px;
+    opacity: 0.5;
+  }
+  .admin-user-actions {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+  .admin-btn {
+    padding: 7px 14px;
+    background: transparent;
+    border: 1px solid rgba(26,26,26,0.15);
+    border-radius: 3px;
+    font-family: var(--font-sans);
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    color: var(--soil);
+    cursor: pointer;
+    transition: all 0.25s var(--ease-out);
+  }
+  .admin-btn:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+  .admin-btn.danger { color: var(--red); border-color: rgba(192,57,43,0.3); }
+  .admin-btn.danger:hover { background: var(--red); color: #fff; border-color: var(--red); }
+  .admin-btn.success { color: var(--moss); border-color: rgba(74,93,78,0.3); }
+  .admin-btn.success:hover { background: var(--moss); color: #fff; border-color: var(--moss); }
+
+  .admin-empty {
+    padding: 60px 20px;
+    text-align: center;
+    font-family: var(--font-serif);
+    color: var(--soil);
+    font-size: 0.9rem;
+    letter-spacing: 0.06em;
+  }
+
+  /* 编辑弹窗 */
+  .admin-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 21000;
+    background: rgba(26,26,26,0.4);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s var(--ease-out);
+  }
+  .admin-modal.show { opacity: 1; pointer-events: auto; }
+  .admin-modal-card {
+    width: min(420px, calc(100vw - 40px));
+    background: var(--paper);
+    border: 1px solid rgba(26,26,26,0.1);
+    border-radius: 6px;
+    padding: 32px 28px 24px;
+    box-shadow: 0 32px 96px rgba(26,26,26,0.32);
+    transform: translateY(16px) scale(0.97);
+    transition: transform 0.4s var(--ease-out);
+    max-height: calc(100vh - 48px);
+    overflow-y: auto;
+  }
+  .admin-modal.show .admin-modal-card { transform: translateY(0) scale(1); }
+  .admin-modal-title {
+    font-family: var(--font-serif);
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 24px;
+    letter-spacing: -0.01em;
+  }
+  .admin-field {
+    margin-bottom: 20px;
+  }
+  .admin-field label {
+    display: block;
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--soil);
+    margin-bottom: 8px;
+  }
+  .admin-field input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(26,26,26,0.18);
+    padding: 8px 0;
+    font-size: 15px;
+    color: var(--ink);
+    outline: none;
+    font-family: var(--font-serif);
+    letter-spacing: 0.06em;
+  }
+  .admin-field input:focus { border-color: var(--accent); }
+  .admin-modal-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 28px;
+  }
+  .admin-modal-actions button {
+    flex: 1;
+    padding: 12px;
+    border-radius: 4px;
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+    transition: all 0.3s var(--ease-out);
+    border: none;
+  }
+  .admin-modal-save { background: var(--ink); color: var(--paper); }
+  .admin-modal-save:hover { background: var(--accent); }
+  .admin-modal-cancel { background: transparent; color: var(--soil); border: 1px solid rgba(26,26,26,0.15) !important; }
+  .admin-modal-cancel:hover { background: rgba(26,26,26,0.06); }
 
   @media (max-width: 1024px) {
     .students-grid { grid-template-columns: repeat(3, 1fr); }
@@ -1427,6 +1584,8 @@
     .moments-closing { text-align: left; }
     .footer-top { grid-template-columns: 1fr; gap: 40px; }
     .footer-bottom { flex-direction: column; align-items: flex-start; }
+    .admin-user { flex-wrap: wrap; }
+    .admin-user-actions { width: 100%; }
   }
   @media (max-width: 600px) {
     .students-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1443,11 +1602,8 @@
     .game-status { text-align: left; min-width: 0; }
     .chat-toggle { right: 18px; bottom: 18px; width: 46px; height: 46px; }
     .chat-panel {
-      right: 12px;
-      left: 12px;
-      bottom: 76px;
-      width: auto;
-      height: min(460px, calc(100vh - 120px));
+      right: 12px; left: 12px; bottom: 76px;
+      width: auto; height: min(460px, calc(100vh - 120px));
     }
     .update-card { padding: 30px 24px 22px; }
     .update-title { font-size: 19px; }
@@ -1695,13 +1851,60 @@
 <div class="update-modal" id="updateModal">
   <div class="update-card">
     <div class="update-badge">更新公告</div>
-    <h3 class="update-title">聊天室修复</h3>
-    <p class="update-version">版本号 <em>1.2</em></p>
+    <h3 class="update-title">管理员功能上线</h3>
+    <p class="update-version">版本号 <em>1.3</em></p>
     <ul class="update-list">
-      <li>修复了登录后聊天室按钮不显示的 BUG</li>
-      <li>优化了聊天室初始化时机</li>
+      <li>新增管理员账号，可管理所有用户</li>
+      <li>支持封禁、改名、改密、添加用户</li>
+      <li>修复了登录后聊天室按钮不显示的问题</li>
     </ul>
     <button class="update-close" id="updateClose" type="button">知道了</button>
+  </div>
+</div>
+
+<!-- 管理员面板 -->
+<div class="admin-panel" id="adminPanel">
+  <div class="admin-inner">
+    <div class="admin-top">
+      <h2 class="admin-title">管理员面板<em>ABC</em></h2>
+      <button class="admin-logout" id="adminLogout" type="button">退出管理</button>
+    </div>
+    <div class="admin-toolbar">
+      <button class="admin-add" id="adminAdd" type="button">+ 添加用户</button>
+      <span class="admin-count" id="adminCount">共 0 位用户</span>
+    </div>
+    <div class="admin-list" id="adminList"></div>
+  </div>
+</div>
+
+<!-- 编辑/添加弹窗 -->
+<div class="admin-modal" id="adminModal">
+  <div class="admin-modal-card">
+    <h3 class="admin-modal-title" id="adminModalTitle">编辑用户</h3>
+    <div class="admin-field">
+      <label for="adminKey">拼音缩写（用户名）</label>
+      <input type="text" id="adminKey" autocomplete="off" spellcheck="false" placeholder="例如 LQY">
+    </div>
+    <div class="admin-field">
+      <label for="adminName">姓名</label>
+      <input type="text" id="adminName" autocomplete="off" spellcheck="false" placeholder="例如 刘秋熠">
+    </div>
+    <div class="admin-field">
+      <label for="adminPwd">密码</label>
+      <input type="text" id="adminPwd" autocomplete="off" spellcheck="false" placeholder="例如 LQY666">
+    </div>
+    <div class="admin-field">
+      <label for="adminNum">学号</label>
+      <input type="number" id="adminNum" autocomplete="off" placeholder="例如 1">
+    </div>
+    <div class="admin-field">
+      <label for="adminSecond">二级密码（可留空）</label>
+      <input type="text" id="adminSecond" autocomplete="off" spellcheck="false" placeholder="例如 as110308">
+    </div>
+    <div class="admin-modal-actions">
+      <button class="admin-modal-cancel" id="adminModalCancel" type="button">取消</button>
+      <button class="admin-modal-save" id="adminModalSave" type="button">保存</button>
+    </div>
   </div>
 </div>
 
@@ -1728,6 +1931,8 @@
   'use strict';
 
   var CLOUDBASE_ENV_ID = 'class-2103-d8g6mn8o80452428a';
+  var ADMIN_USER = 'ABC';
+  var ADMIN_PWD = 'YJH';
 
   var ACCOUNTS = {
     'LQY':  [{ name: '刘秋熠', pwd: 'LQY666', num: 1 }],
@@ -1781,6 +1986,13 @@
     'SYP':  [{ name: '孙逸平', pwd: 'SYP666', num: 45 }]
   };
 
+  /* 账号缓存（从 CloudBase 加载的覆盖数据） */
+  var accountCache = null;
+  var cloudApp = null;
+  var cloudDb = null;
+  var cloudReady = false;
+  var cloudReadyCallbacks = [];
+
   function getGenderByNum(num) {
     if (num >= 1 && num <= 17) return 'male';
     if (num >= 18 && num <= 36) return 'female';
@@ -1809,9 +2021,25 @@
   var bgMusic = document.getElementById('bgMusic');
   var updateModal = document.getElementById('updateModal');
   var updateClose = document.getElementById('updateClose');
+  var adminPanel = document.getElementById('adminPanel');
+  var adminList = document.getElementById('adminList');
+  var adminCount = document.getElementById('adminCount');
+  var adminLogout = document.getElementById('adminLogout');
+  var adminAdd = document.getElementById('adminAdd');
+  var adminModal = document.getElementById('adminModal');
+  var adminModalTitle = document.getElementById('adminModalTitle');
+  var adminKey = document.getElementById('adminKey');
+  var adminName = document.getElementById('adminName');
+  var adminPwd = document.getElementById('adminPwd');
+  var adminNum = document.getElementById('adminNum');
+  var adminSecond = document.getElementById('adminSecond');
+  var adminModalSave = document.getElementById('adminModalSave');
+  var adminModalCancel = document.getElementById('adminModalCancel');
 
   var pendingAccount = null;
+  var editingDocId = null;
 
+  /* 光标 */
   var dot = document.getElementById('cursorDot');
   var ring = document.getElementById('cursorRing');
   var mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
@@ -1834,7 +2062,7 @@
 
   function bindCursorGrow() {
     var els = document.querySelectorAll(
-      'a, button, input, .stat-cell, .teacher-card, .student, .photo-row figure, .nav-links a, .nav-brand, .login-btn, .picker-item, .picker-back, .game-card, .game-btn, .chat-toggle, .update-close'
+      'a, button, input, .stat-cell, .teacher-card, .student, .photo-row figure, .nav-links a, .nav-brand, .login-btn, .picker-item, .picker-back, .game-card, .game-btn, .chat-toggle, .update-close, .admin-btn, .admin-add, .admin-logout, .admin-modal-actions button'
     );
     for (var i = 0; i < els.length; i++) {
       var el = els[i];
@@ -1876,6 +2104,122 @@
     loginCard.classList.add('shake');
   }
 
+  /* =========================================================
+     账号数据初始化（CloudBase）
+     ========================================================= */
+  function buildFromHardcoded() {
+    var result = {};
+    Object.keys(ACCOUNTS).forEach(function (key) {
+      ACCOUNTS[key].forEach(function (acc) {
+        var id = key + '_' + acc.name;
+        result[id] = {
+          _id: id,
+          userKey: key,
+          name: acc.name,
+          pwd: acc.pwd,
+          num: acc.num || 0,
+          second: acc.second || '',
+          banned: false
+        };
+      });
+    });
+    return result;
+  }
+
+  function initCloudAccounts() {
+    return new Promise(function (resolve) {
+      if (typeof cloudbase === 'undefined') {
+        accountCache = buildFromHardcoded();
+        resolve(accountCache);
+        return;
+      }
+      try {
+        cloudApp = cloudbase.init({ env: CLOUDBASE_ENV_ID });
+        var auth = cloudApp.auth({ persistence: 'local' });
+        auth.signInAnonymously().then(function () {
+          cloudDb = cloudApp.database();
+          return cloudDb.collection('accounts').limit(200).get();
+        }).then(function (res) {
+          if (res && res.data && res.data.length > 0) {
+            accountCache = {};
+            res.data.forEach(function (doc) {
+              accountCache[doc._id] = {
+                _id: doc._id,
+                userKey: doc.userKey,
+                name: doc.name,
+                pwd: doc.pwd,
+                num: doc.num || 0,
+                second: doc.second || '',
+                banned: !!doc.banned
+              };
+            });
+            cloudReady = true;
+            resolve(accountCache);
+          } else {
+            /* 首次初始化：把硬编码数据写入数据库 */
+            var initial = buildFromHardcoded();
+            var docs = Object.keys(initial).map(function (k) { return initial[k]; });
+            var promises = docs.map(function (d) {
+              return cloudDb.collection('accounts').add(d);
+            });
+            Promise.all(promises).then(function (results) {
+              accountCache = {};
+              results.forEach(function (r, i) {
+                var d = docs[i];
+                d._id = r.id || d._id;
+                accountCache[d._id] = d;
+              });
+              cloudReady = true;
+              resolve(accountCache);
+            }).catch(function (err) {
+              console.warn('初始化数据库失败，使用本地数据', err);
+              accountCache = initial;
+              cloudReady = true;
+              resolve(accountCache);
+            });
+          }
+        }).catch(function (err) {
+          console.warn('加载账号失败，使用本地数据', err);
+          accountCache = buildFromHardcoded();
+          resolve(accountCache);
+        });
+      } catch (e) {
+        console.warn('CloudBase 初始化失败，使用本地数据', e);
+        accountCache = buildFromHardcoded();
+        resolve(accountCache);
+      }
+    });
+  }
+
+  /* 按 userKey 分组获取账号 */
+  function getAccountsByKey(key) {
+    var arr = [];
+    if (!accountCache) return arr;
+    Object.keys(accountCache).forEach(function (id) {
+      var acc = accountCache[id];
+      if (acc.userKey === key) arr.push(acc);
+    });
+    return arr;
+  }
+
+  /* 页面加载时立即初始化 */
+  initCloudAccounts().then(function () {
+    // 准备好后，触发等待的回调（比如登录提交时）
+    cloudReadyCallbacks.forEach(function (cb) { cb(); });
+    cloudReadyCallbacks = [];
+  });
+
+  function whenCloudReady(cb) {
+    if (cloudReady || accountCache) {
+      cb();
+    } else {
+      cloudReadyCallbacks.push(cb);
+    }
+  }
+
+  /* =========================================================
+     选择层
+     ========================================================= */
   function hidePicker() {
     picker.classList.remove('show');
     pickerTitle.classList.remove('error');
@@ -1942,6 +2286,9 @@
     passInput.focus();
   });
 
+  /* =========================================================
+     登录提交
+     ========================================================= */
   loginForm.addEventListener('submit', function (e) {
     e.preventDefault();
 
@@ -1950,6 +2297,13 @@
 
     if (!user || !pass) { showError('请输入用户名和密码'); return; }
 
+    /* 管理员登录 */
+    if (user === ADMIN_USER && pass === ADMIN_PWD) {
+      enterAdminPanel();
+      return;
+    }
+
+    /* 二级密码阶段 */
     if (pendingAccount) {
       if (pass.toLowerCase() === pendingAccount.second.toLowerCase()) {
         doLogin(pendingAccount);
@@ -1959,22 +2313,35 @@
       return;
     }
 
-    var candidates = ACCOUNTS[user];
-    if (!candidates || candidates.length === 0) {
-      showError('用户名或密码错误'); return;
-    }
+    /* 等待账号数据加载完 */
+    whenCloudReady(function () {
+      var candidates = getAccountsByKey(user);
+      if (!candidates || candidates.length === 0) {
+        showError('用户名或密码错误'); return;
+      }
 
-    var matched = candidates.filter(function (acc) {
-      return acc.pwd.toUpperCase() === pass;
+      var matched = candidates.filter(function (acc) {
+        return acc.pwd.toUpperCase() === pass && !acc.banned;
+      });
+
+      if (matched.length === 0) {
+        var banned = candidates.some(function (acc) {
+          return acc.pwd.toUpperCase() === pass && acc.banned;
+        });
+        if (banned) {
+          showError('该账号已被封禁');
+        } else {
+          showError('用户名或密码错误');
+        }
+        return;
+      }
+
+      if (matched.length === 1) {
+        showGenderPicker(matched[0]);
+      } else {
+        showUserPicker(matched);
+      }
     });
-
-    if (matched.length === 0) { showError('用户名或密码错误'); return; }
-
-    if (matched.length === 1) {
-      showGenderPicker(matched[0]);
-    } else {
-      showUserPicker(matched);
-    }
   });
 
   function proceedWithAccount(account) {
@@ -2030,7 +2397,6 @@
       initChat();
     }, 300);
 
-    /* 更新公告：主页入场后延迟 1.2 秒显示 */
     setTimeout(function () {
       updateModal.classList.add('show');
       bindCursorGrow();
@@ -2045,52 +2411,251 @@
     if (e.target === updateModal) closeUpdateModal();
   });
 
+  /* =========================================================
+     管理员面板
+     ========================================================= */
+  function enterAdminPanel() {
+    loginView.classList.add('out');
+    setTimeout(function () {
+      loginView.style.display = 'none';
+      adminPanel.classList.add('show');
+      document.body.classList.remove('locked');
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          adminPanel.classList.add('in');
+        });
+      });
+      whenCloudReady(function () { renderAdminList(); });
+    }, 600);
+  }
+
+  function renderAdminList() {
+    adminList.innerHTML = '';
+    if (!accountCache) {
+      adminList.innerHTML = '<div class="admin-empty">账号数据加载中…</div>';
+      return;
+    }
+
+    /* 按 userKey 分组 */
+    var groups = {};
+    Object.keys(accountCache).forEach(function (id) {
+      var acc = accountCache[id];
+      if (!groups[acc.userKey]) groups[acc.userKey] = [];
+      groups[acc.userKey].push(acc);
+    });
+
+    var keys = Object.keys(groups).sort();
+    var totalUsers = 0;
+
+    keys.forEach(function (key) {
+      var users = groups[key];
+      totalUsers += users.length;
+
+      var groupEl = document.createElement('div');
+      groupEl.className = 'admin-group';
+
+      var header = document.createElement('div');
+      header.className = 'admin-group-header';
+      header.innerHTML = '<span class="key">' + key + '</span><span>' + users.length + ' 个用户</span>';
+      groupEl.appendChild(header);
+
+      users.forEach(function (acc) {
+        var userEl = document.createElement('div');
+        userEl.className = 'admin-user' + (acc.banned ? ' banned' : '');
+
+        var info = document.createElement('div');
+        info.className = 'admin-user-info';
+        var nameHtml = '<div class="admin-user-name">' + acc.name;
+        if (acc.banned) nameHtml += '<span class="status">已封禁</span>';
+        nameHtml += '</div>';
+        info.innerHTML = nameHtml +
+          '<div class="admin-user-meta">' +
+          '<span>' + acc.pwd + '</span>' +
+          '<span>学号 ' + acc.num + '</span>' +
+          (acc.second ? '<span>二级密码</span>' : '') +
+          '</div>';
+        userEl.appendChild(info);
+
+        var actions = document.createElement('div');
+        actions.className = 'admin-user-actions';
+
+        var editBtn = document.createElement('button');
+        editBtn.className = 'admin-btn';
+        editBtn.textContent = '编辑';
+        editBtn.addEventListener('click', function () { openEditModal(acc); });
+        actions.appendChild(editBtn);
+
+        var banBtn = document.createElement('button');
+        banBtn.className = 'admin-btn ' + (acc.banned ? 'success' : 'danger');
+        banBtn.textContent = acc.banned ? '解封' : '封禁';
+        banBtn.addEventListener('click', function () { toggleBan(acc); });
+        actions.appendChild(banBtn);
+
+        userEl.appendChild(actions);
+        groupEl.appendChild(userEl);
+      });
+
+      adminList.appendChild(groupEl);
+    });
+
+    adminCount.textContent = '共 ' + totalUsers + ' 位用户';
+  }
+
+  function openEditModal(acc) {
+    editingDocId = acc._id;
+    adminModalTitle.textContent = '编辑用户';
+    adminKey.value = acc.userKey;
+    adminName.value = acc.name;
+    adminPwd.value = acc.pwd;
+    adminNum.value = acc.num || '';
+    adminSecond.value = acc.second || '';
+    adminModal.classList.add('show');
+    bindCursorGrow();
+  }
+
+  function openAddModal() {
+    editingDocId = null;
+    adminModalTitle.textContent = '添加用户';
+    adminKey.value = '';
+    adminName.value = '';
+    adminPwd.value = '';
+    adminNum.value = '';
+    adminSecond.value = '';
+    adminModal.classList.add('show');
+    bindCursorGrow();
+  }
+
+  function closeAdminModal() {
+    adminModal.classList.remove('show');
+  }
+
+  function saveAdminModal() {
+    var key = adminKey.value.trim().toUpperCase();
+    var name = adminName.value.trim();
+    var pwd = adminPwd.value.trim();
+    var num = parseInt(adminNum.value, 10) || 0;
+    var second = adminSecond.value.trim();
+
+    if (!key || !name || !pwd) {
+      alert('请填写拼音缩写、姓名和密码');
+      return;
+    }
+
+    if (editingDocId) {
+      /* 编辑 */
+      var acc = accountCache[editingDocId];
+      if (!acc) return;
+
+      var updated = {
+        userKey: key,
+        name: name,
+        pwd: pwd,
+        num: num,
+        second: second
+      };
+
+      if (cloudDb) {
+        cloudDb.collection('accounts').doc(editingDocId).update(updated).then(function () {
+          Object.keys(updated).forEach(function (k) { acc[k] = updated[k]; });
+          renderAdminList();
+          closeAdminModal();
+        }).catch(function (err) {
+          console.error('更新失败', err);
+          alert('更新失败：' + err.message);
+        });
+      } else {
+        Object.keys(updated).forEach(function (k) { acc[k] = updated[k]; });
+        renderAdminList();
+        closeAdminModal();
+      }
+    } else {
+      /* 新增 */
+      var newAcc = {
+        userKey: key,
+        name: name,
+        pwd: pwd,
+        num: num,
+        second: second,
+        banned: false
+      };
+
+      if (cloudDb) {
+        cloudDb.collection('accounts').add(newAcc).then(function (res) {
+          newAcc._id = res.id || (key + '_' + name);
+          accountCache[newAcc._id] = newAcc;
+          renderAdminList();
+          closeAdminModal();
+        }).catch(function (err) {
+          console.error('添加失败', err);
+          alert('添加失败：' + err.message);
+        });
+      } else {
+        newAcc._id = key + '_' + name + '_' + Date.now();
+        accountCache[newAcc._id] = newAcc;
+        renderAdminList();
+        closeAdminModal();
+      }
+    }
+  }
+
+  function toggleBan(acc) {
+    var newState = !acc.banned;
+    if (cloudDb) {
+      cloudDb.collection('accounts').doc(acc._id).update({ banned: newState }).then(function () {
+        acc.banned = newState;
+        renderAdminList();
+      }).catch(function (err) {
+        console.error('操作失败', err);
+        alert('操作失败：' + err.message);
+      });
+    } else {
+      acc.banned = newState;
+      renderAdminList();
+    }
+  }
+
+  adminAdd.addEventListener('click', openAddModal);
+  adminModalSave.addEventListener('click', saveAdminModal);
+  adminModalCancel.addEventListener('click', closeAdminModal);
+  adminModal.addEventListener('click', function (e) {
+    if (e.target === adminModal) closeAdminModal();
+  });
+
+  adminLogout.addEventListener('click', function () {
+    adminPanel.classList.remove('in');
+    setTimeout(function () {
+      adminPanel.classList.remove('show');
+      loginView.style.display = '';
+      loginView.classList.remove('out');
+      setTimeout(function () {
+        loginView.classList.add('in');
+      }, 100);
+      userInput.value = '';
+      passInput.value = '';
+      document.body.classList.add('locked');
+    }, 400);
+  });
+
+  /* =========================================================
+     学生名单
+     ========================================================= */
   var students = [
-    { num: 1,  name: '刘秋熠' },
-    { num: 2,  name: '刘承希' },
-    { num: 3,  name: '周凡博' },
-    { num: 4,  name: '颜佳浩' },
-    { num: 5,  name: '言墨轩' },
-    { num: 6,  name: '李林希' },
-    { num: 7,  name: '王晨翊' },
-    { num: 8,  name: '邓文奕' },
-    { num: 9,  name: '邓佳荣' },
-    { num: 10, name: '路朝麒' },
-    { num: 11, name: '张晨曦' },
+    { num: 1,  name: '刘秋熠' }, { num: 2,  name: '刘承希' }, { num: 3,  name: '周凡博' },
+    { num: 4,  name: '颜佳浩' }, { num: 5,  name: '言墨轩' }, { num: 6,  name: '李林希' },
+    { num: 7,  name: '王晨翊' }, { num: 8,  name: '邓文奕' }, { num: 9,  name: '邓佳荣' },
+    { num: 10, name: '路朝麒' }, { num: 11, name: '张晨曦' },
     { num: 12, name: '张文轩', tag: '插班', newcomer: true },
-    { num: 13, name: '马建坤' },
-    { num: 14, name: '谢宇轩' },
-    { num: 15, name: '罗钟毓' },
-    { num: 16, name: '刘睿铭' },
-    { num: 17, name: '陈坤润' },
-    { num: 18, name: '罗梦溪' },
-    { num: 19, name: '蒋昕霓' },
-    { num: 20, name: '徐晟洁' },
-    { num: 21, name: '朱雨娇' },
-    { num: 22, name: '潘扬洋' },
-    { num: 23, name: '侯媛馨' },
-    { num: 24, name: '刘雅卿' },
-    { num: 25, name: '郑惜苗' },
-    { num: 26, name: '胡芷宁' },
-    { num: 27, name: '梁紫萱' },
-    { num: 28, name: '刘语晨' },
-    { num: 29, name: '周雅萍' },
-    { num: 30, name: '赵蔓青' },
-    { num: 31, name: '钟忆童' },
-    { num: 32, name: '刘欣诣' },
-    { num: 33, name: '罗晨曦' },
-    { num: 34, name: '龚诗琪' },
-    { num: 35, name: '章芯晨' },
-    { num: 36, name: '李紫菡' },
-    { num: 37, name: '刘梓轩' },
-    { num: 38, name: '周梓晨' },
-    { num: 39, name: '付梓菡' },
-    { num: 40, name: '陈鸿锦' },
-    { num: 41, name: '谢雨琪' },
-    { num: 42, name: '李尚轩' },
-    { num: 43, name: '曾泓译' },
-    { num: 44, name: '胡乐梓阳' },
-    { num: 45, name: '孙逸平' }
+    { num: 13, name: '马建坤' }, { num: 14, name: '谢宇轩' }, { num: 15, name: '罗钟毓' },
+    { num: 16, name: '刘睿铭' }, { num: 17, name: '陈坤润' }, { num: 18, name: '罗梦溪' },
+    { num: 19, name: '蒋昕霓' }, { num: 20, name: '徐晟洁' }, { num: 21, name: '朱雨娇' },
+    { num: 22, name: '潘扬洋' }, { num: 23, name: '侯媛馨' }, { num: 24, name: '刘雅卿' },
+    { num: 25, name: '郑惜苗' }, { num: 26, name: '胡芷宁' }, { num: 27, name: '梁紫萱' },
+    { num: 28, name: '刘语晨' }, { num: 29, name: '周雅萍' }, { num: 30, name: '赵蔓青' },
+    { num: 31, name: '钟忆童' }, { num: 32, name: '刘欣诣' }, { num: 33, name: '罗晨曦' },
+    { num: 34, name: '龚诗琪' }, { num: 35, name: '章芯晨' }, { num: 36, name: '李紫菡' },
+    { num: 37, name: '刘梓轩' }, { num: 38, name: '周梓晨' }, { num: 39, name: '付梓菡' },
+    { num: 40, name: '陈鸿锦' }, { num: 41, name: '谢雨琪' }, { num: 42, name: '李尚轩' },
+    { num: 43, name: '曾泓译' }, { num: 44, name: '胡乐梓阳' }, { num: 45, name: '孙逸平' }
   ];
 
   var grid = document.getElementById('studentsGrid');
@@ -2107,18 +2672,12 @@
   }
 
   var momentsLines = [
-    '6年的精彩不止于此',
-    '未完待续',
-    '镜头之外，还有更多没被记录的日常',
-    '每一张照片，都是一段时间的出口',
-    '这些定格的光，往后还会继续亮'
+    '6年的精彩不止于此', '未完待续', '镜头之外，还有更多没被记录的日常',
+    '每一张照片，都是一段时间的出口', '这些定格的光，往后还会继续亮'
   ];
   var endLines = [
-    '结束就是新的开始',
-    '散场不是终点，是下一程的起点',
-    '离开这间教室，带走的是六年',
-    '故事到这儿，路还很长',
-    '再见面时，我们都长大了'
+    '结束就是新的开始', '散场不是终点，是下一程的起点', '离开这间教室，带走的是六年',
+    '故事到这儿，路还很长', '再见面时，我们都长大了'
   ];
 
   var momentsEl = document.getElementById('momentsClosing');
@@ -2141,7 +2700,6 @@
     } else {
       revealEls.forEach(function (el) { el.classList.add('visible'); });
     }
-
     var studentEls = document.querySelectorAll('.student');
     if ('IntersectionObserver' in window) {
       var obsS = new IntersectionObserver(function (entries) {
@@ -2197,7 +2755,6 @@
     var line = document.getElementById('secretLine');
     var newText = document.getElementById('secretNew');
     if (!cell || !line || !newText) return;
-
     if ('IntersectionObserver' in window) {
       var obs = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
@@ -2219,11 +2776,9 @@
     var startY = window.pageYOffset;
     var diff = targetY - startY;
     var start = null;
-
     function easeInOutCubic(t) {
       return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
     }
-
     function step(t) {
       if (!start) start = t;
       var p = Math.min((t - start) / duration, 1);
@@ -2248,15 +2803,16 @@
     });
   });
 
+  /* =========================================================
+     三了个班
+     ========================================================= */
   var gameNames = [
     '钟诗佳', '蒋琪', '罗艳',
     '刘秋熠', '刘承希', '周凡博', '颜佳浩', '言墨轩', '李林希',
     '王晨翊', '邓文奕', '邓佳荣', '路朝麒', '张晨曦', '张文轩',
     '马建坤', '谢宇轩', '罗钟毓', '刘睿铭', '陈坤润'
   ];
-
   var gameState = { level: 1, cards: [], slots: [], slotMax: 7, locked: false };
-
   var stageEl = document.getElementById('gameStage');
   var slotsEl = document.getElementById('gameSlots');
   var levelEl = document.getElementById('gameLevel');
@@ -2275,11 +2831,9 @@
 
   function initGame(level) {
     if (!stageEl) return;
-
     gameState.level = level;
     gameState.slots = [];
     gameState.locked = false;
-
     var nameCount = level === 1 ? 8 : 12;
     var pool = gameShuffle(gameNames).slice(0, nameCount);
     var cards = [];
@@ -2287,11 +2841,9 @@
       for (var i = 0; i < 3; i++) cards.push(name);
     });
     gameState.cards = gameShuffle(cards);
-
     levelEl.textContent = level;
     statusEl.textContent = '点击卡片，凑三个';
     statusEl.classList.remove('win', 'lose');
-
     renderStage();
     renderSlots();
     updateProgress();
@@ -2302,7 +2854,6 @@
     var cards = gameState.cards;
     var count = cards.length;
     if (!count) return;
-
     var w = stageEl.offsetWidth;
     var h = stageEl.offsetHeight;
     var cols = Math.ceil(Math.sqrt(count * w / h * 1.3));
@@ -2312,7 +2863,6 @@
     var cellH = h / rows;
     var cw = Math.min(84, cellW * 0.82, cellH * 0.82);
     var ch = cw;
-
     cards.forEach(function (name, i) {
       var col = i % cols;
       var row = Math.floor(i / cols);
@@ -2320,10 +2870,8 @@
       var cy = (row + 0.5) * cellH;
       var jx = (Math.random() - 0.5) * Math.min(10, cellW * 0.14);
       var jy = (Math.random() - 0.5) * Math.min(10, cellH * 0.14);
-
       var x = Math.max(2, Math.min(w - cw - 2, cx - cw / 2 + jx));
       var y = Math.max(2, Math.min(h - ch - 2, cy - ch / 2 + jy));
-
       var el = document.createElement('button');
       el.type = 'button';
       el.className = 'game-card';
@@ -2343,24 +2891,18 @@
     if (gameState.locked) return;
     if (this.classList.contains('taken')) return;
     if (gameState.slots.length >= gameState.slotMax) return;
-
     var name = this.dataset.name;
     var el = this;
     el.classList.add('taken');
-
     var idx = gameState.cards.indexOf(name);
     if (idx > -1) gameState.cards.splice(idx, 1);
-
     el.style.transform = 'scale(0.4)';
     el.style.opacity = '0';
     setTimeout(function () { if (el.parentNode) el.remove(); }, 260);
-
     gameState.slots.push(name);
     gameState.slots.sort(function (a, b) { return a.localeCompare(b, 'zh'); });
-
     renderSlots();
     updateProgress();
-
     var matched = processMatches();
     if (matched) {
       gameState.locked = true;
@@ -2451,6 +2993,9 @@
     }, 200);
   });
 
+  /* =========================================================
+     聊天室
+     ========================================================= */
   var chatToggle   = document.getElementById('chatToggle');
   var chatPanel    = document.getElementById('chatPanel');
   var chatClose    = document.getElementById('chatClose');
@@ -2460,13 +3005,13 @@
   var chatStatus   = document.getElementById('chatStatus');
   var chatBadge    = document.getElementById('chatBadge');
 
-  var chatApp          = null;
-  var chatDb           = null;
-  var chatWatcher      = null;
-  var chatUnread       = 0;
-  var chatOpen         = false;
-  var currentUserName  = '';
-  var renderedMsgIds   = {};
+  var chatApp = null;
+  var chatDb = null;
+  var chatWatcher = null;
+  var chatUnread = 0;
+  var chatOpen = false;
+  var currentUserName = '';
+  var renderedMsgIds = {};
 
   function toggleChat() {
     chatOpen = !chatOpen;
@@ -2484,7 +3029,6 @@
   function appendMessage(name, text, isMine, msgId) {
     if (msgId && renderedMsgIds[msgId]) return;
     if (msgId) renderedMsgIds[msgId] = true;
-
     var div = document.createElement('div');
     div.className = 'chat-msg ' + (isMine ? 'mine' : 'theirs');
     var span = document.createElement('span');
@@ -2494,7 +3038,6 @@
     div.appendChild(document.createTextNode(text));
     chatMessages.appendChild(div);
     chatMessages.scrollTop = chatMessages.scrollHeight;
-
     if (!chatOpen && !isMine) {
       chatUnread++;
       chatBadge.textContent = chatUnread > 99 ? '99+' : chatUnread;
@@ -2503,16 +3046,13 @@
   }
 
   function initChat() {
-    try {
-      currentUserName = sessionStorage.getItem('2103_user') || '';
-    } catch (e) {}
+    try { currentUserName = sessionStorage.getItem('2103_user') || ''; } catch (e) {}
 
     if (typeof cloudbase === 'undefined') {
       chatStatus.textContent = '聊天室加载失败，请刷新重试';
       chatStatus.classList.add('offline');
       return;
     }
-
     if (!currentUserName) {
       chatStatus.textContent = '请先登录后再使用聊天室';
       chatStatus.classList.add('offline');
@@ -2528,16 +3068,11 @@
 
       auth.signInAnonymously().then(function () {
         chatDb = chatApp.database();
-
         chatStatus.textContent = '已连接';
         chatStatus.classList.add('online');
         chatStatus.classList.remove('offline');
         chatSend.disabled = false;
-
-        return chatDb.collection('chat_messages')
-          .orderBy('createdAt', 'asc')
-          .limit(50)
-          .get();
+        return chatDb.collection('chat_messages').orderBy('createdAt', 'asc').limit(50).get();
       }).then(function (res) {
         if (res && res.data) {
           res.data.forEach(function (doc) {
@@ -2545,34 +3080,29 @@
             appendMessage(doc.sender, doc.text, doc.sender === currentUserName, doc._id);
           });
         }
-
-        chatWatcher = chatDb.collection('chat_messages')
-          .orderBy('createdAt', 'asc')
-          .limit(50)
-          .watch({
-            onChange: function (snapshot) {
-              if (snapshot.docChanges) {
-                snapshot.docChanges.forEach(function (change) {
-                  if (change.dataType === 'add') {
-                    var doc = change.doc;
-                    if (doc._id && renderedMsgIds[doc._id]) return;
-                    appendMessage(doc.sender, doc.text, doc.sender === currentUserName, doc._id);
-                  }
-                });
-              }
-            },
-            onError: function (err) {
-              console.error('聊天室监听出错', err);
-              chatStatus.textContent = '连接中断，请刷新页面';
-              chatStatus.classList.add('offline');
+        chatWatcher = chatDb.collection('chat_messages').orderBy('createdAt', 'asc').limit(50).watch({
+          onChange: function (snapshot) {
+            if (snapshot.docChanges) {
+              snapshot.docChanges.forEach(function (change) {
+                if (change.dataType === 'add') {
+                  var doc = change.doc;
+                  if (doc._id && renderedMsgIds[doc._id]) return;
+                  appendMessage(doc.sender, doc.text, doc.sender === currentUserName, doc._id);
+                }
+              });
             }
-          });
+          },
+          onError: function (err) {
+            console.error('聊天室监听出错', err);
+            chatStatus.textContent = '连接中断，请刷新页面';
+            chatStatus.classList.add('offline');
+          }
+        });
       }).catch(function (err) {
         console.error('聊天室初始化失败', err);
         chatStatus.textContent = '连接失败，请刷新重试';
         chatStatus.classList.add('offline');
       });
-
     } catch (e) {
       console.error('聊天室初始化失败', e);
       chatStatus.textContent = '连接失败';
@@ -2583,10 +3113,8 @@
   function sendChatMessage() {
     var text = chatInput.value.trim();
     if (!text || !chatDb) return;
-
     chatInput.value = '';
     chatSend.disabled = true;
-
     chatDb.collection('chat_messages').add({
       sender: currentUserName,
       text: text,
